@@ -23,5 +23,5 @@ if [ ! -f $LOCKFILE ];then
     sed -i "s/<sni>/${SNI}/g; s/<short_id>/${SHORTID}/g; s/<uuid>/${UUID}/g; s/<private_key>/${PRIVATE}/g" "$CONFIG_FILE"
     #create lockfile
     touch $LOCKFILE
-    sing-box -C /opt/singbox/config/config.json run
+    sing-box -C /opt/singbox/config/ run
 fi

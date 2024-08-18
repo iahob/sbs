@@ -24,4 +24,5 @@ if [ ! -f $LOCKFILE ];then
     #create lockfile
     touch $LOCKFILE
 fi
-    exec sing-box -C /opt/singbox/config/ run
+echo "singbox starting..."
+sing-box -C /opt/singbox/config/ run

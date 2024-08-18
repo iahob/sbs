@@ -2,7 +2,7 @@ FROM ghcr.io/sagernet/sing-box:latest
 
 ENV SNI=icloud.cdn-apple.com
 RUN set -e &&\
-    apk add --no-cache bash libqrencode curl &&\
+    apk add --no-cache bash libqrencode-tools curl &&\
     mkdir /opt/singbox &&\
     mkdir /opt/singbox/config
 

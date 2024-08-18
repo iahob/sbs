@@ -9,3 +9,4 @@ WORKDIR /opt/singbox
 COPY config.json config/config.json
 COPY get-client-qr.sh .
 COPY entrypoint.sh .
+ENTRYPOINT [ "/bin/bash"]

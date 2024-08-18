@@ -3,6 +3,8 @@ RUN set -e &&\
     apk add --no-cache bash libqrencode curl &&\
     mkdir /opt/singbox &&\
     mkdir /opt/singbox/config
+    
+RUN apk add --no-cache bash && bash --version
 
 WORKDIR /opt/singbox
 

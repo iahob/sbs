@@ -4,9 +4,8 @@ services:
     environment:
       - SNI=www.samsung.com
     container_name: sbs
-    restart: always
     ports:
-      - "443:443"
+      - "44339:443"
     volumes:
       - sbs-volume:/opt/singbox/config
 volumes:

@@ -20,11 +20,11 @@
         ],
         "tls": {
         "enabled": true,
-        "server_name": "icloud.cdn-apple.com",
+        "server_name": "<sni>",
         "reality": {
             "enabled": true,
             "handshake": {
-            "server": "icloud.cdn-apple.com",
+            "server": "<sni>",
             "server_port": 443
             },
             "private_key": "<private_key>",

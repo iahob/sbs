@@ -20,7 +20,7 @@ if [ ! -f $LOCKFILE ];then
     SHORTID=$(cat config/short_id)
     CONFIG_FILE="config/config.json"
     #set uuid in config.json
-    sed -i "s/<short_id>/${SHORTID}/g; s/<uuid>/${UUID}/g; s/<private_key>/${PRIVATE}/g" "$CONFIG_FILE"
+    sed -i "s/<sni>/${SNI}/g; s/<short_id>/${SHORTID}/g; s/<uuid>/${UUID}/g; s/<private_key>/${PRIVATE}/g" "$CONFIG_FILE"
     #create lockfile
     touch $LOCKFILE
     sing-box -C /opt/singbox/config/config.json run

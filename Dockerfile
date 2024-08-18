@@ -1,14 +1,16 @@
 FROM ghcr.io/sagernet/sing-box:latest
+
+ENV SNI=icloud.cdn-apple.com
 RUN set -e &&\
     apk add --no-cache bash libqrencode curl &&\
     mkdir /opt/singbox &&\
     mkdir /opt/singbox/config
-    
-RUN apk add --no-cache bash && bash --version
 
 WORKDIR /opt/singbox
 
 COPY config.json config/config.json
 COPY get-client-qr.sh .
 COPY entrypoint.sh .
-ENTRYPOINT [ "/bin/bash"]
+
+EXPOSE 443
+ENTRYPOINT [ "/bin/bash","./entrypoint.sh" ]

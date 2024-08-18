@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  sbs:
+    image:  yuwenhaibo/sbs:latest
+    environment:
+      - SNI=www.samsung.com
+    container_name: sbs
+    restart: always
+    ports:
+      - "443:443"
+    volumes:
+      - sbs-volume:/opt/singbox/config
+volumes:
+  sbs:

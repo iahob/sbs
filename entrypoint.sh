@@ -3,6 +3,7 @@
 #LOCKFILE for generate uuid and keys in first start
 LOCKFILE=config/.lockfile
 if [ ! -f $LOCKFILE ];then
+    sing-box version
     #generate uuid
     echo "Generate UUID..."
     sing-box generate uuid > config/uuid
@@ -22,4 +23,5 @@ if [ ! -f $LOCKFILE ];then
     sed -i "s/<short_id>/${SHORTID}/g; s/<uuid>/${UUID}/g; s/<private_key>/${PRIVATE}/g" "$CONFIG_FILE"
     #create lockfile
     touch $LOCKFILE
+    sing-box -C /opt/singbox/config/config.json run
 fi

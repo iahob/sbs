@@ -7,7 +7,7 @@ if [ ! -f $LOCKFILE ];then
     #generate uuid
     echo "Generate UUID..."
     sing-box generate uuid > config/uuid
-    ${SNI} > config/sni
+    echo ${SNI} > config/sni
     #generate short_id 
     sing-box generate rand 8 --hex > config/short_id
     #generate Public & Private keys
